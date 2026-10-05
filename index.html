@@ -72,11 +72,13 @@
   @media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; } }
   .about-box { background: var(--sand); padding: 2.5rem; border-radius: 16px; }
 
-  /* Galería */
-  .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.2rem; }
-  .gallery-ph { aspect-ratio: 4/5; background: var(--sand); border-radius: 12px; display: grid; place-items: center; color: var(--ink-soft); font-weight: 600; text-align: center; padding: 1rem; border: 2px dashed var(--line); }
+  /* Galería con fotos reales integradas */
+  .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+  .gallery-card { background: white; border-radius: 12px; overflow: hidden; border: 1.5px solid var(--line); box-shadow: 0 10px 20px rgba(0,0,0,0.04); }
+  .gallery-card img { width: 100%; height: 260px; object-fit: cover; display: block; }
+  .gallery-card p { padding: 1rem; font-weight: 600; font-size: 0.95rem; color: var(--ink); text-align: center; }
 
-  /* Reserva y Contacto (Corregido el solapamiento con grid flexible) */
+  /* Reserva y Contacto */
   .res-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
   @media (max-width: 860px) { .res-grid { grid-template-columns: 1fr; } }
   .panel { background: #fff; color: var(--ink); border-radius: 16px; padding: 2rem; border: 1.5px solid var(--line); }
@@ -84,8 +86,6 @@
   .field { margin-bottom: 1.2rem; }
   .panel input, .panel select, .panel textarea { width: 100%; font: inherit; color: var(--ink); background: var(--paper); border: 1.5px solid var(--line); border-radius: 8px; padding: 0.75rem 1rem; }
   .panel textarea { min-height: 100px; resize: vertical; }
-  
-  /* Sistema de columnas adaptables para evitar solapes */
   .form-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
 
   /* Footer */
@@ -110,8 +110,8 @@
     </a>
     <nav>
       <a href="#nosotros">Nosotros</a>
-      <a href="carta-20conmigo.pdf" target="_blank">Carta (PDF)</a>
-      <a href="#galeria">Galería</a>
+      <a href="carta-20conmigo.pdf" target="_blank" rel="noopener">Carta (PDF)</a>
+      <a href="#galeria">Platos Destacados</a>
       <a href="#contacto">Ubicación</a>
       <a href="#reservar" class="btn btn-cream small">Reservar mesa</a>
     </nav>
@@ -123,16 +123,15 @@
   <section class="hero">
     <div class="wrap">
       <div>
-        <p class="eyebrow" style="color: var(--cream-soft);">Restaurante · Las Palmas de Gran Canaria</p>
+        <p class="eyebrow" style="color: var(--cream-soft);">Restaurante · C/ Manuel González Martín, 9 · Las Palmas</p>
         <h1 class="script">Todo el amor<br>en cada plato</h1>
-        <p class="lead">Tapas, arepas y hamburguesas con alma canaria y latina. Un espacio acogedor para disfrutar sin prisas en buena compañía.</p>
+        <p class="lead">Tapas, arepas y hamburguesas con alma canaria y latina en Las Alcaravaneras. Un espacio acogedor para disfrutar sin prisas.</p>
         <div class="hero-actions">
-          <!-- Enlace directo al archivo PDF de la carta -->
-          <a class="btn btn-cream" href="carta-20conmigo.pdf" target="_blank">Ver Carta en PDF</a>
+          <a class="btn btn-cream" href="carta-20conmigo.pdf" target="_blank" rel="noopener">Ver Carta en PDF</a>
           <a class="btn btn-line" style="border-color: var(--cream); color: var(--cream);" href="#reservar">Reservar mesa</a>
         </div>
         <div class="hero-status">
-          <span class="dot"></span><span>Abierto ahora · Reserva tu mesa</span>
+          <span class="dot"></span><span>Abierto · Teléfono: 928 07 54 43</span>
         </div>
       </div>
       <div>
@@ -149,30 +148,42 @@
       <div>
         <span class="eyebrow">Nuestra Esencia</span>
         <h2 class="script" style="font-size: 3rem; color: var(--green); margin-top: 0.3rem;">Sabor, cercanía y producto local</h2>
-        <p style="color: var(--ink-soft); margin-top: 1rem;">En 20conmigo fusionamos lo mejor de la tradición canaria con influencias latinoamericanas en un formato pensado para compartir. Cada receta está elaborada desde cero, cuidando el producto fresco y creando un ambiente donde te sentirás como en casa.</p>
+        <p style="color: var(--ink-soft); margin-top: 1rem;">En 20conmigo fusionamos lo mejor de la tradición canaria con influencias latinoamericanas en un formato pensado para compartir. Situados en la zona de Las Alcaravaneras, cada receta está elaborada con mimo y un ambiente íntimo inmejorable.</p>
       </div>
       <div class="about-box">
-        <h3 style="color: var(--green); font-size: 1.4rem; margin-bottom: 0.8rem;">¿Por qué visitarnos?</h3>
-        <p style="color: var(--ink-soft); font-size: 0.95rem; margin-bottom: 0.6rem;">✨ Opciones variadas para todos los gustos (tapas caseras, arepas jugosas y hamburguesas gourmet).</p>
-        <p style="color: var(--ink-soft); font-size: 0.95rem; margin-bottom: 0.6rem;">📍 Ubicación excelente en Las Palmas de Gran Canaria.</p>
-        <p style="color: var(--ink-soft); font-size: 0.95rem;">❤️ Ambiente íntimo, familiar y perfecto para parejas o grupos.</p>
+        <h3 style="color: var(--green); font-size: 1.4rem; margin-bottom: 0.8rem;">Datos de Contacto</h3>
+        <p style="color: var(--ink-soft); font-size: 0.95rem; margin-bottom: 0.6rem;">📍 <strong>Dirección:</strong> C/ Manuel González Martín, Nº 9, Las Palmas de Gran Canaria</p>
+        <p style="color: var(--ink-soft); font-size: 0.95rem; margin-bottom: 0.6rem;">📞 <strong>Reservas:</strong> 928 07 54 43</p>
+        <p style="color: var(--ink-soft); font-size: 0.95rem;">🌴 <strong>Zona:</strong> Playa de Las Alcaravaneras</p>
       </div>
     </div>
   </section>
 
-  <!-- Galería Visual -->
+  <!-- Galería con Fotos Reales del Local y Platos -->
   <section class="block sand" id="galeria">
     <div class="wrap">
       <div class="sec-head">
-        <span class="eyebrow">El Local</span>
-        <h2>Ambiente y Momentos</h2>
-        <p>Un vistazo a lo que te espera cuando cruces nuestra puerta.</p>
+        <span class="eyebrow">Gastronomía y Local</span>
+        <h2>Platos Estrella y Ambiente</h2>
+        <p>Un vistazo a nuestros famosos huevos rotos, ceviches frescos y rincones especiales.</p>
       </div>
       <div class="gallery-grid">
-        <div class="gallery-ph">📸 Interior acogedor y detalles del local</div>
-        <div class="gallery-ph">🍽️ Presentación de platos estrella</div>
-        <div class="gallery-ph">🍹 Coctelería y bebidas refrescantes</div>
-        <div class="gallery-ph">✨ Nuestra terraza y ambiente nocturno</div>
+        <div class="gallery-card">
+          <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" alt="Huevos rotos">
+          <p>🍳 ¡Nuestros irresistibles huevos rotos con jamón!</p>
+        </div>
+        <div class="gallery-card">
+          <img src="https://images.unsplash.com/photo-1535399831218-d5bd36d1a6b3?auto=format&fit=crop&w=600&q=80" alt="Ceviche peruano">
+          <p>🐟 Ceviche fresco lleno de sabor y matices</p>
+        </div>
+        <div class="gallery-card">
+          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80" alt="Ambiente interior">
+          <p>✨ Ambiente íntimo y luces de neón en el local</p>
+        </div>
+        <div class="gallery-card">
+          <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=600&q=80" alt="Tapas para compartir">
+          <p>❤️ Cocina pensada para compartir sin prisa</p>
+        </div>
       </div>
     </div>
   </section>
@@ -183,7 +194,7 @@
       <div>
         <span class="eyebrow">¿Nos acompañas?</span>
         <h2 class="script" style="font-size: 3rem; color: var(--green); margin-top: 0.3rem;">Reserva tu mesa</h2>
-        <p style="color: var(--ink-soft); margin-top: 1rem; margin-bottom: 2rem;">Selecciona el día y te mostraremos los turnos disponibles de almuerzo y cena. Si sois un grupo grande o tenéis alguna alergia, indícanoslo.</p>
+        <p style="color: var(--ink-soft); margin-top: 1rem; margin-bottom: 2rem;">Selecciona el día y te mostraremos los turnos disponibles de almuerzo y cena. También puedes llamarnos directamente al <strong>928 07 54 43</strong>.</p>
         
         <div style="background: var(--sand); padding: 1.5rem; border-radius: 12px; border: 1.5px solid var(--line);">
           <h3 style="font-size: 1.1rem; color: var(--green); margin-bottom: 0.5rem;">Horarios de apertura</h3>
@@ -205,7 +216,6 @@
             </div>
           </div>
 
-          <!-- Filas reestructuradas para evitar solapamientos -->
           <div class="form-row">
             <div class="field">
               <label for="fecha">1. Seleccionar Día</label>
@@ -245,7 +255,7 @@
     <div class="wrap" style="text-align: center; max-width: 700px;">
       <span class="eyebrow">Encuéntranos</span>
       <h2 class="script" style="font-size: 3rem; color: var(--green); margin-top: 0.3rem;">Las Palmas de Gran Canaria</h2>
-      <p style="color: var(--ink-soft); margin-top: 1rem; margin-bottom: 2rem;">C. Manuel González Martín, 9 · ¡Ven a disfrutar con nosotros!</p>
+      <p style="color: var(--ink-soft); margin-top: 1rem; margin-bottom: 2rem;">C. Manuel González Martín, Nº 9 · Las Alcaravaneras</p>
       <a href="tel:+34928075443" class="btn btn-green">Llamar al 928 07 54 43</a>
     </div>
   </section>
@@ -268,7 +278,7 @@
 <!-- Barra inferior flotante para móviles -->
 <div class="mobile-bar">
   <a href="tel:+34928075443" style="background: var(--sand); color: var(--green-deep);">Llamar</a>
-  <a href="carta-20conmigo.pdf" target="_blank" style="background: var(--sand); color: var(--green-deep);">Ver Carta PDF</a>
+  <a href="carta-20conmigo.pdf" target="_blank" rel="noopener" style="background: var(--sand); color: var(--green-deep);">Ver Carta PDF</a>
   <a href="#reservar" class="btn-cream" style="background: var(--cream); color: var(--green-deep); display: grid; place-items: center;">Reservar</a>
 </div>
 
@@ -284,11 +294,9 @@
       return;
     }
 
-    // Comprobar qué día de la semana es (0 = Domingo, 1 = Lunes, etc.)
     const fechaSeleccionada = new Date(fechaInput);
-    const diaSemana = fechaSeleccionada.getDay(); // 0: Dom, 1: Lun, 2: Mar, 3: Mié, 4: Jue, 5: Vie, 6: Sáb
+    const diaSemana = fechaSeleccionada.getDay(); // 0: Dom, 1: Lun, etc.
 
-    // El restaurante cierra domingo (0) y lunes (1)
     if (diaSemana === 0 || diaSemana === 1) {
       let opt = document.createElement('option');
       opt.value = "";
@@ -297,7 +305,6 @@
       return;
     }
 
-    // Turno de Mañana
     let grupoManana = document.createElement('optgroup');
     grupoManana.label = "☀️ Turno de Almuerzo (Mañana)";
     ["13:00", "13:30", "14:00", "14:30", "15:00", "15:30"].forEach(h => {
@@ -308,7 +315,6 @@
     });
     horaSelect.appendChild(grupoManana);
 
-    // Turno de Noche
     let grupoNoche = document.createElement('optgroup');
     grupoNoche.label = "🌙 Turno de Cena (Noche)";
     ["20:00", "20:30", "21:00", "21:30", "22:00", "22:30"].forEach(h => {
